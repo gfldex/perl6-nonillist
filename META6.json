@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "source-url": "https://github.com/gfldex/perl6-nonillist.git",
+  "production": false,
+  "meta-version": "0",
+  "depends": [
+    "Test::META"
+  ],
+  "resources": [
+    
+  ],
+  "auth": "github:gfldex",
+  "build-depends": [
+    
+  ],
+  "authors": [
+    "Wenzel P. P. Peppmeyer <wenzel.peppmeyer@gmx.de>"
+  ],
+  "perl": "6.c",
+  "tags": [
+    
+  ],
+  "license": "Artistic-2.0",
+  "test-depends": [
+    
+  ],
+  "support": {
+    "source": null
+  },
+  "provides": {
+    
+  },
+  "name": "NoNilList",
+  "description": ""
+}
