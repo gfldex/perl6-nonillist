@@ -5,7 +5,11 @@
 ## SYNOPSIS
 
 ```
-use NoNilList;
+use NoNilList::Fatal;
+
+# or
+
+use NoNilList::Warnings;
 ```
 
 ## LICENSE
