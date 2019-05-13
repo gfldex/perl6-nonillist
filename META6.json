@@ -28,7 +28,9 @@
     "source": null
   },
   "provides": {
-    
+    "NoNilList",
+    "NoNilList::Fatal",
+    "NoNilList::Warning"
   },
   "name": "NoNilList",
   "description": ""
