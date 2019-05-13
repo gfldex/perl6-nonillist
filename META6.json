@@ -18,19 +18,18 @@
   ],
   "perl": "6.c",
   "tags": [
-    
   ],
   "license": "Artistic-2.0",
   "test-depends": [
-    
+      "Test::META"
   ],
   "support": {
     "source": null
   },
   "provides": {
-    "NoNilList",
-    "NoNilList::Fatal",
-    "NoNilList::Warning"
+    "NoNilList":"lib/NoNilList.pm6",
+    "NoNilList::Fatal":"lib/NoNilList/Fatal.pm6",
+    "NoNilList::Warning":"lib/NoNilList/Warning.pm6"
   },
   "name": "NoNilList",
   "description": ""
