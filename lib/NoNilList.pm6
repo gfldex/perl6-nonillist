@@ -7,21 +7,18 @@ class X::TypeCheck::NilToList is Exception is export {
 sub EXPORT($_?) {
     given $_ {
         when 'Warning' {
-            EVAL ‚use MONKEY-TYPING; augment class Nil {
-                method list() {
-                    note 'Trying to turn Nil into a list.';
-                    note Backtrace.new.list.tail.Str;
-                    Empty
-                }
-            }‘;
-
+            Nil.^add_method('list', my method (Nil:) {
+                note 'Trying to turn Nil into a list.';
+                note Backtrace.new.list.tail.Str;
+                Empty
+            });
+            Nil.^compose;
         }
         when 'Fatal' {
-            EVAL ‚use MONKEY-TYPING; augment class Nil {
-               method list() {
-                   X::TypeCheck::NilToList.new().fail();
-               }
-            }‘;
+            Nil.^add_method('list', my method {
+                 X::TypeCheck::NilToList.new().fail();
+            });
+            Nil.^compose;
         }
         default {
             die 'Please use NoNilList::Warning or NoNilList::Fatal.';

@@ -1,5 +1,5 @@
 use Test;
-plan 1;
+plan 2;
 
 use NoNilList::Warning;
 
@@ -13,6 +13,8 @@ class CaptureWarn {
 
 my $*ERR = CaptureWarn.new;
 
-niler.list;
+ok niler.list === Empty, ‚Nil.list returns Empty‘;
+
+# say $*ERR.warnings;
 
 ok $*ERR.warnings.contains(‚Trying to turn Nil into a list.‘), ‚Warn on Nil.list.‘;

@@ -1,4 +1,5 @@
 use Test;
+plan 2;
 
 use NoNilList::Fatal;
 
