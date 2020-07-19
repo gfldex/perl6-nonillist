@@ -4,6 +4,8 @@
 
 Warn or fail when turning Nil into a list.
 
+## MOTIVATION
+
 Nil can pop up in many places where one might not expect it. This is usually 
 fine. It can become problematic when it is turned into a list.
 
