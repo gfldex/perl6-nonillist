@@ -2,15 +2,36 @@
 
 [![Build Status](https://travis-ci.org/gfldex/perl6-nonillist.svg?branch=master)](https://travis-ci.org/gfldex/perl6-nonillist)
 
-## SYNOPSIS
+Warn or fail when turning Nil into a list.
+
+Nil can pop up in many places where one might not expect it. This is usually 
+fine. It can become problematic when it is turned into a list.
 
 ```
-use NoNilList::Fatal;
+sub niler { }
 
-# or
+my @a = niler();
+say so @a.elems == 1; # True
 
-use NoNilList::Warnings;
+@a := niler.list;
+say so @a.elems == 1; # True
+
+for niler() {
+    say 1; # 1
+}
 ```
+
+Here we turn the absense of a value into a list with one element.
+
+## USAGE
+
+`use NoNilList::Fatal;`
+
+This will die on `Nil.list`.
+
+`use NoNilList::Warnings;`
+
+This will warn and return `Empty` on `Nil.list`.
 
 ## LICENSE
 
